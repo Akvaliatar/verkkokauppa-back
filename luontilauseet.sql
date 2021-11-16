@@ -7,9 +7,9 @@ CREATE TABLE osoite (
     postinro CHAR(5)
 );
 -- ...........................................................
--- Asiakas-taulu
+-- Asiakas-taulu, index täytyy lisätä
 CREATE TABLE asiakas (
-    asID INTEGER INTEGER PRIMARY KEY,
+    asID INTEGER AUTO_INCREMENT PRIMARY KEY, -- eri kuin kanta-asiakas ID
     asETUnimi CHAR(30),
     asSUnimi CHAR(30),
     puh INTEGER,
@@ -19,15 +19,15 @@ CREATE TABLE asiakas (
 -- ...........................................................
 --Kanta-asiakas-taulu ?
 CREATE TABLE kanta_asiakas (
-    asID,
-    nimike,
-    pisteet
+    asID INTEGER AUTO_INCREMENT,
+    nimike CHAR(25),
+    pisteet SMALLINT
 );
 -- ...........................................................
 -- kurssimuodot
 CREATE TABLE kurssiMuoto (
     kID PRIMARY KEY,
-    kNimi
+    kNimi char(40)
 );
 -- kurssit
 CREATE TABLE kurssi(
@@ -45,7 +45,7 @@ CREATE TABLE asuste(
 CREATE TABLE askartelu(
     trNimi PRIMARY KEY,
     väri,
-    lankaTyyppi,
+    lankaTyyppiEläin, --L,A,S
     pituus
 );
 -- herkut
