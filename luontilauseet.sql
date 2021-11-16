@@ -3,7 +3,7 @@ CREATE DATABASE kotielainpuisto;
 CREATE TABLE osoite (
     tienimi CHAR(85),
     tienro SMALLINT,
-    postitmp CHAR (20)),
+    postitmp CHAR (20),
     postinro CHAR(5)
 );
 -- ...........................................................
@@ -38,29 +38,31 @@ CREATE TABLE kurssi(
 -- asusteet
 CREATE TABLE asuste(
     trNimi PRIMARY KEY,
-    koko, -- numeroin vai kirjaimin?
-    väri
+    koko CHAR(3) NOT NULL, -- laitoin kirjaimin -> 'XS', 'M', 'XXL'. Voidaan vaihtaa jos numeroin on parempi
+    väri CHAR(35) NOT NULL
 );
 -- askartelu/kädentaito
 CREATE TABLE askartelu(
     trNimi PRIMARY KEY,
-    väri,
-    lankaTyyppiEläin, --L,A,S
-    pituus
+    väri CHAR(30) NOT NULL,
+    lankaTyyppiEläin CHAR(1) NOT NULL, --L,A,S
+    pituus SMALLINT
 );
 -- herkut
 CREATE TABLE herkku(
     trNimi PRIMARY KEY
+    koko CHAR(25) NOT NULL -- määritetään tuotteen koko  kirjiamin esim. 500 mg tai 1 kg
 );
 -- hoitotarvikkeet
 CREATE TABLE hoito(
     trNimi PRIMARY KEY
+    koko CHAR(25)
 );
 -- ...........................................................
 -- Tuoteryhmä-taulu
 CREATE TABLE tuoteryhma (
     tuoteryhma,
-    trNimi,
+    trNimi CHAR(35) NOT NULL,
     FOREIGN KEY (tuoteryhma)
     REFERENCES ...  (trID)
 );
@@ -68,8 +70,8 @@ CREATE TABLE tuoteryhma (
 -- Tuote-taulu
 CREATE TABLE tuote (
     tuotenro PRIMARY KEY,
-    tuotenimi,
-    hinta,
+    tuotenimi NOT NULL,
+    hinta DECIMAL(4,2) NOT NULL,
     tuoteryhma,
     FOREIGN KEY (tuoteryhma)
     REFERENCES tuoteryhma (tuoteryhma)
@@ -78,17 +80,24 @@ CREATE TABLE tuote (
 -- Tilaus-taulu
 CREATE TABLE tilaus (
     tilausID PRIMARY KEY,
-    asID ,
-    tilauspvm,
-    tila,
-    tapa,
-    koodi
+    asID,
+    tilauspvm DATE,
+    tila CHAR(1), -- tila kirjaimin -> 'V' 'T' 'M'
+    tapa CHAR(1), -- tapa kirjaimin -> K P V
+    koodi,
+    FOREIGN KEY (asID)
+    REFERENCES asiakas(asID)
 );
 
 -- Tilausrivi-taulu
 CREATE TABLE tilausrivi (
     tilausID,
     tuotenro,
-    kpl
+    rivinro PRIMARY KEY,
+    kpl,
+    FOREIGN KEY (tilausID)
+    REFERENCES tilaus (tilausID),
+    FOREIGN KEY (tuotenro)
+    REFERENCES tuote (tuotenro)
 );
 
