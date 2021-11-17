@@ -10,3 +10,5 @@
 */
 
 -- INSERT INTO tuote VALUES (tuotenro,'tuotenimi', hinta, kustannus, trnro, väri, määrä, koko, LankaTyyppiEläin, Pituus);
+
+INSERT INTO tuote VALUES (1,'lihapulla', 2.50, 1.50, 1, NULL, 5, NULL, NULL, NULL);
