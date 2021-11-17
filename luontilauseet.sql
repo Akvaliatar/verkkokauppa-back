@@ -19,20 +19,20 @@ CREATE TABLE asiakas (
 -- ...........................................................
 --Kanta-asiakas-taulu ?
 CREATE TABLE kanta_asiakas (
-    asID INTEGER AUTO_INCREMENT,
+    asID INTEGER AUTO_INCREMENT PRIMARY KEY,
     nimike CHAR(25),
     pisteet SMALLINT
 );
 -- ...........................................................
 -- kurssimuodot
 CREATE TABLE kurssiMuoto (
-    kID PRIMARY KEY,
+    kID INTEGER PRIMARY KEY,
     kNimi char(40)
 );
 -- kurssit
 CREATE TABLE kurssi(
-    trNimi PRIMARY KEY,
-    kID,
+    trNimi char(40) PRIMARY KEY,
+    kID INTEGER,
     FOREIGN KEY (kID)
 );
 -- asusteet
