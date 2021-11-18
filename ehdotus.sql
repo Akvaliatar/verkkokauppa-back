@@ -20,7 +20,7 @@ hinta DECIMAL(5,2),
 kustannus DECIMAL(5,2), 
 trnro SMALLINT  NOT NULL,
 vari CHAR(30),
-maara SMALLINT,
+maara CHAR(4), -- grammoista kiloiksi esim. 1000g -> 1kg
 koko CHAR (3), -- esim xs, m, xxl
 lankaTyyppiEläin CHAR(1), -- L,A,S
 pituus SMALLINT -- askartelua varten?
