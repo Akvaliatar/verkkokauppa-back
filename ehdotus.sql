@@ -43,6 +43,8 @@ sposti CHAR(64),
 CONSTRAINT asiakas_pk PRIMARY KEY (asID)
 ) ;
 
+-- values asiakas
+
 
 -- tilaus
 CREATE TABLE tilaus (
