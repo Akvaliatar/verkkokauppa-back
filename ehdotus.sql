@@ -1,16 +1,18 @@
 CREATE TABLE tuoteryhma (
 trnro SMALLINT,
-trnimi CHAR(10),
+trnimi CHAR(20),
+teksti CHAR(200),
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
 ) ;
 
 -- values tuoteryhmä
-INSERT INTO tuoteryhma VALUES (1,'Eläinherkut');
-INSERT INTO tuoteryhma VALUES (2,'Eläintenhoitotuotteet');
-INSERT INTO tuoteryhma VALUES (3,'Askartelutarvikkeet');
-INSERT INTO tuoteryhma VALUES (4,'Asusteet');
-INSERT INTO tuoteryhma VALUES (5,'Palvelut');
-INSERT INTO tuoteryhma VALUES (6,'Liput');
+INSERT INTO tuoteryhma VALUES (1,'Eläinherkut', 'Täältä löytyy tilalla tuotettuja ');
+INSERT INTO tuoteryhma VALUES (2,'Eläintenhoitotuotteet', 'Täältä löydät eläinystävällisiä hoitotuotteita.');
+INSERT INTO tuoteryhma VALUES (3,'Askartelutarvikkeet', 'Täältä löytyy askartelutarvikkeita puuhasteluun.');
+INSERT INTO tuoteryhma VALUES (4,'Asusteet', 'Täältä löydät tilamme villasta tehtyjä vaatteita ja asusteita itselle sekä nelijalkaiselle ystävällesi.');
+INSERT INTO tuoteryhma VALUES (5,'Palvelut', 'Tästä pääset katselemaan, mitä eri palveluita tarjoamme.');
+INSERT INTO tuoteryhma VALUES (6,'Liput', 'Täältä voit ostaa ennakkoon päivälipun tai kausikortin.');
+
 
 -- tuote 
 CREATE TABLE tuote (
@@ -36,7 +38,7 @@ asID CHAR(6),
 asETUnimi CHAR(20) NOT NULL,
 asSUKUnimi CHAR(20) NOT NULL,
 postinro CHAR(5), 
-postitmp CHAR(10),
+postitmp CHAR(20),
 puh INTEGER, 
 sposti CHAR(64), 
 CONSTRAINT asiakas_pk PRIMARY KEY (asID)
@@ -48,6 +50,7 @@ CONSTRAINT asiakas_pk PRIMARY KEY (asID)
 CREATE TABLE kanta_asiakas (
     asID INTEGER AUTO_INCREMENT PRIMARY KEY,
     nimike CHAR(25),
+    salasana CHAR(20),
     pisteet SMALLINT
 );
 
