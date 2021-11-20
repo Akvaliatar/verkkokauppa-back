@@ -17,7 +17,7 @@ CREATE TABLE asiakas (
 
 );
 -- ...........................................................
---Kanta-asiakas-taulu ?
+--Kanta-asiakas-taulu 
 CREATE TABLE kanta_asiakas (
     asID INTEGER AUTO_INCREMENT PRIMARY KEY,
     nimike CHAR(25),

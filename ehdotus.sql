@@ -19,17 +19,16 @@ tuotenimi CHAR(30) UNIQUE NOT NULL,
 hinta DECIMAL(5,2),
 kustannus DECIMAL(5,2), 
 trnro SMALLINT  NOT NULL,
-vari CHAR(30),
+vari CHAR(40),
 maara CHAR(4), -- grammoista kiloiksi esim. 1000g -> 1kg
 koko CHAR (3), -- esim xs, m, xxl
-lankaTyyppiEläin CHAR(1), -- L,A,S
-pituus SMALLINT -- askartelua varten?
+lankaTyyppiEläin CHAR(12), -- L,A,S
+pituus CHAR(4) -- askartelua varten?
 ) ;
 
 
 -- values tuote
 -- INSERT INTO tuote VALUES (tuotenro,'tuotenimi', hinta, kustannus, trnro, väri, määrä, koko, LankaTyyppiEläin, Pituus);
-INSERT INTO tuote VALUES (1,'lihapulla', 2.50, 1.50, 1, NULL, 5, NULL, NULL, NULL);
 
 -- asiakas
 CREATE TABLE asiakas (
@@ -45,6 +44,12 @@ CONSTRAINT asiakas_pk PRIMARY KEY (asID)
 
 -- values asiakas
 
+-- Kanta-asiakas-taulu 
+CREATE TABLE kanta_asiakas (
+    asID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nimike CHAR(25),
+    pisteet SMALLINT
+);
 
 -- tilaus
 CREATE TABLE tilaus (

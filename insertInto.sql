@@ -11,31 +11,31 @@
 
 -- INSERT INTO tuote VALUES (tuotenro,'tuotenimi', hinta, kustannus, trnro, väri, määrä, koko, LankaTyyppiEläin, Pituus);
 
-INSERT INTO tuote VALUES (1,'lihapulla', 2.50, 1.50, 1, NULL, 5, NULL, NULL, NULL);
-INSERT INTO tuote VALUES (2,'maapähkinäkeksit', 4.90, 2.50, 1, NULL, '100g', 'S', NULL, NULL); -- small-pussi (koirille)
-INSERT INTO tuote VALUES (3,'maapähkinäkeksit', 7.90, 2.90, 1, NULL, '175g', 'M', NULL, NULL); -- medium-pussi
-INSERT INTO tuote VALUES (4,'maapähkinäkeksit', 8.90, 3.10, 1, NULL, '200g', 'L', NULL, NULL); -- large-pussi
-INSERT INTO tuote VALUES (5, 'aaveluut', 5.90, 3.00, 1, NULL, '150g', 'S', NULL, NULL); -- samanlainen pussijärjestelmä kuin edellisissä (koirille), teen erikseen ne lisätietotekstit näille myöhemmin (ei oikeita luita :'D)
-INSERT INTO tuote VALUES (6, 'aaveluut', 6.90, 3.30, 1, NULL, '200g', 'M', NULL, NULL);
-INSERT INTO tuote VALUES (7, 'aaveluut', 8.90, 5.00, 1, NULL, '300g', 'L', NULL, NULL);
-INSERT INTO tuote VALUES (8, 'fisut', 3.90, 2.00, 1, NULL, '75g', 'S', NULL, NULL); -- samanlainen pussijärjestelmä kuin edellisissä (kissoille)
-INSERT INTO tuote VALUES (9, 'fisut', 4.10, 2.50, 1, NULL, '100g', 'M', NULL, NULL);
-INSERT INTO tuote VALUES (10, 'fisut', 4.90, 4.00, 1, NULL, '150g', 'L', NULL, NULL);
+INSERT INTO tuote VALUES (1,'lihapullia', 2.50, 1.50, 1, NULL, '250g', NULL, NULL, NULL);
+INSERT INTO tuote VALUES (2,'maapähkinäkeksit S', 4.90, 2.50, 1, NULL, '100g', 'S', NULL, NULL); -- small-pussi (koirille)
+INSERT INTO tuote VALUES (3,'maapähkinäkeksit M', 7.90, 2.90, 1, NULL, '175g', 'M', NULL, NULL); -- medium-pussi
+INSERT INTO tuote VALUES (4,'maapähkinäkeksit L', 8.90, 3.10, 1, NULL, '200g', 'L', NULL, NULL); -- large-pussi
+INSERT INTO tuote VALUES (5, 'aaveluut S', 5.90, 3.00, 1, NULL, '150g', 'S', NULL, NULL); -- samanlainen pussijärjestelmä kuin edellisissä (koirille), teen erikseen ne lisätietotekstit näille myöhemmin (ei oikeita luita :'D)
+INSERT INTO tuote VALUES (6, 'aaveluut M', 6.90, 3.30, 1, NULL, '200g', 'M', NULL, NULL);
+INSERT INTO tuote VALUES (7, 'aaveluut L', 8.90, 5.00, 1, NULL, '300g', 'L', NULL, NULL);
+INSERT INTO tuote VALUES (8, 'fisut S', 3.90, 2.00, 1, NULL, '75g', 'S', NULL, NULL); -- samanlainen pussijärjestelmä kuin edellisissä (kissoille)
+INSERT INTO tuote VALUES (9, 'fisut M', 4.10, 2.50, 1, NULL, '100g', 'M', NULL, NULL);
+INSERT INTO tuote VALUES (10, 'fisut L', 4.90, 4.00, 1, NULL, '150g', 'L', NULL, NULL);
 INSERT INTO tuote VALUES (11, 'mix', 7.90, 6.00, 1, NULL, '300g', 'L', NULL, NULL); -- pelkkä large tällä (koirille ja kissoille)
-INSERT INTO tuote VALUES (12, 'hunajavoide', 20.00, 12.50, 2, NULL, '150g', 'S', NULL, NULL); -- kissoile, koirille, hevosille jne. (._. ihan oikea tuote)
-INSERT INTO tuote VALUES (13, 'hunajavoide', 30.00, 25.00, 2, NULL, '250g', 'M', NULL, NULL);
-INSERT INTO tuote VALUES (14, 'hunajavoide', 40.00, 37.50, 2, NULL, '350g', 'L', NULL, NULL);
+INSERT INTO tuote VALUES (12, 'hunajavoide S', 20.00, 12.50, 2, NULL, '150g', 'S', NULL, NULL); -- kissoile, koirille, hevosille jne. (._. ihan oikea tuote)
+INSERT INTO tuote VALUES (13, 'hunajavoide M', 30.00, 25.00, 2, NULL, '250g', 'M', NULL, NULL);
+INSERT INTO tuote VALUES (14, 'hunajavoide L', 40.00, 37.50, 2, NULL, '350g', 'L', NULL, NULL);
 INSERT INTO tuote VALUES (15, 'punottu pulmapallo', 25.00, 15.00, 2, 'punainen', '100g', NULL, NULL, NULL); -- herkuille (kissoille ja koirille), '12cm (halkaisija)'
 INSERT INTO tuote VALUES (16, 'höyhenkeppilelu', 3.90, 2.00, 2, 'valkoharmaa', '200g', NULL, NULL, NULL); -- '60cm', 
 INSERT INTO tuote VALUES (17, 'villapeitto', 40.00, 30.00, 2, 'harmaa', '600g', NULL, NULL, NULL); -- '70x90cm'
-INSERT INTO tuote VALUES (18, 'puhdasta huovutusvillaa', 6.90, 5.00, 3, 'luonnonvalkoinen', '100g', NULL, NULL, NULL); -- korkeus x leveys x syvyys
-INSERT INTO tuote VALUES (19, 'puhdasta huovutusvillaa', 6.90, 5.00, 3, 'luonnonharmaa', '100g', NULL, NULL, NULL);
-INSERT INTO tuote VALUES (20, 'puhdasta huovutusvillaa', 6.90, 5.00, 3, 'luonnonmusta', '100g', NULL, NULL, NULL);
-INSERT INTO tuote VALUES (21, 'puhdasta huovutusvillaa', 6.90, 5.00, 3, 'luonnonruskea', '100g', NULL, NULL, NULL);
+INSERT INTO tuote VALUES (18, 'puhdasta huovutusvillaa valo', 6.90, 5.00, 3, 'luonnonvalkoinen', '100g', NULL, NULL, NULL); -- korkeus x leveys x syvyys
+INSERT INTO tuote VALUES (19, 'puhdasta huovutusvillaa pilvi', 6.90, 5.00, 3, 'luonnonharmaa', '100g', NULL, NULL, NULL);
+INSERT INTO tuote VALUES (20, 'puhdasta huovutusvillaa varjo', 6.90, 5.00, 3, 'luonnonmusta', '100g', NULL, NULL, NULL);
+INSERT INTO tuote VALUES (21, 'puhdasta huovutusvillaa ruska', 6.90, 5.00, 3, 'luonnonruskea', '100g', NULL, NULL, NULL);
 INSERT INTO tuote VALUES (22, 'villalankakerä Unto valo', 7.80, 6.90, 3, 'luonnonvalkoinen', '100g', NULL, 'lampaanvilla', '200m'); -- täytyy laittaa että hinnat on samat kaikilla eettisistä syistä (oon laiska)
-INSERT INTO tuote VALUES (23, 'villalankakerä Unto pilvi', 7.80, 6.90, 3, 'luonnonharmaa', '100g', NULL 'lampaanvilla', '200m'); -- 'tex 140x2'
+INSERT INTO tuote VALUES (23, 'villalankakerä Unto pilvi', 7.80, 6.90, 3, 'luonnonharmaa', '100g', NULL, 'lampaanvilla', '200m'); -- 'tex 140x2'
 INSERT INTO tuote VALUES (24, 'villalankakerä Unto varjo', 7.80, 6.90, 3, 'luonnonmusta', '100g', NULL, 'lampaanvilla', '200m');
-INSERT INTO tuote VALUES (25, 'villalankakerä Unto kajastus', 7.80, 6.90, 3, 'luonnonruskea', '100g', NULL, 'lampaanvilla', '200m');
+INSERT INTO tuote VALUES (25, 'villalankakerä Unto ruska', 7.80, 6.90, 3, 'luonnonruskea', '100g', NULL, 'lampaanvilla', '200m');
 INSERT INTO tuote VALUES (26, 'villalankakerä Alca valo', 7.80, 6.90, 3, 'luonnonvalkoinen', '100g', NULL, 'alpakanvilla', '200m');
 INSERT INTO tuote VALUES (27, 'villalankakerä Alca pilvi', 7.80, 6.90, 3, 'luonnonharmaa', '100g', NULL, 'alpakanvilla', '200m');
 INSERT INTO tuote VALUES (28, 'villalankakerä Alca varjo', 7.80, 6.90, 3, 'luonnonmusta', '100g', NULL, 'alpakanvilla', '200m');
@@ -93,11 +93,11 @@ INSERT INTO tuote VALUES (79, 'eläimen käsittely ja hoito -kurssi', 150.00, 70
 INSERT INTO tuote VALUES (80, 'ratsastusterapia', 70.00, 100.00, 5, NULL, '1x', NULL, NULL, '4h'); -- harjaus, maassa käsittely, lyhyt ratsastunti  
 INSERT INTO tuote VALUES (81, 'kummitoimintaterapia (agility yms.)', 30.00, 700.00, 5, NULL, '1x', NULL, NULL, '4h'); 
 INSERT INTO tuote VALUES (82, 'mixed bag', 60.00, 20.00, 5, NULL, '1x', NULL, NULL, '6h'); -- erilaisten eläinten kanssa toimintaa (agility jne.), eli voi vaihdella muiden osallistujien kanssa eläinparia
-INSERT INTO tuote VALUES (82, 'ponin/hevosen talutus', 30.00, 5.00, 5, NULL, '1x', NULL, NULL, '4h'); 
-INSERT INTO tuote VALUES (82, 'lukemista eläimen kanssa', 20.00, 5.00, 5, NULL, '1x', NULL, NULL, '4h'); 
-INSERT INTO tuote VALUES (83, 'kesäleiri lapselle', 120.00, 700.00, 5, NULL, '1x', NULL, NULL, '2vk'); 
-INSERT INTO tuote VALUES (84, 'päivälippu', 10.00, 5.00, 6, NULL, '1x', NULL, NULL, '12h');
-INSERT INTO tuote VALUES (85, '2vk lippu', 20.00, 10.00, 6, NULL, '14x', NULL, NULL, '2vk');
-INSERT INTO tuote VALUES (86, '1kk lippu', 30.00, 10.00, 6, NULL, '30x', NULL, NULL, '1kk');
-INSERT INTO tuote VALUES (87, '3kk lippu', 80.00, 30.00, 6, NULL, '90x', NULL, NULL, '3kk');
+INSERT INTO tuote VALUES (83, 'ponin/hevosen talutus', 30.00, 5.00, 5, NULL, '1x', NULL, NULL, '4h'); 
+INSERT INTO tuote VALUES (84, 'lukemista eläimen kanssa', 20.00, 5.00, 5, NULL, '1x', NULL, NULL, '4h'); 
+INSERT INTO tuote VALUES (85, 'kesäleiri lapselle', 120.00, 700.00, 5, NULL, '1x', NULL, NULL, '2vk'); 
+INSERT INTO tuote VALUES (86, 'päivälippu', 10.00, 5.00, 6, NULL, '1x', NULL, NULL, '12h');
+INSERT INTO tuote VALUES (87, '2vk lippu', 20.00, 10.00, 6, NULL, '14x', NULL, NULL, '2vk');
+INSERT INTO tuote VALUES (88, '1kk lippu', 30.00, 10.00, 6, NULL, '30x', NULL, NULL, '1kk');
+INSERT INTO tuote VALUES (89, '3kk lippu', 80.00, 30.00, 6, NULL, '90x', NULL, NULL, '3kk');
 -- INSERT INTO tuote VALUES ();
