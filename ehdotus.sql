@@ -1,3 +1,9 @@
+drop database if exists kotielainpuisto;
+
+CREATE DATABASE kotielainpuisto;
+
+use kotielainpuisto;
+
 CREATE TABLE tuoteryhma (
 trnro SMALLINT,
 trnimi CHAR(20),

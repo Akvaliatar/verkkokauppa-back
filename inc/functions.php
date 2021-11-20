@@ -7,7 +7,7 @@ function openDb(): object {
     $database = $ini['database'];
     $user = $ini['user'];
     $password = $ini['password'];
-    $db = new PDO('mysql:host=localhost;port=8888;dbname=;charset=utf8','root','root');
+    $db = new PDO('mysql:host=localhost;dbname=kotielainpuisto;charset=utf8','root','');
     $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     return $db;
 }
