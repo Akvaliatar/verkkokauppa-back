@@ -55,7 +55,7 @@ CONSTRAINT asiakas_pk PRIMARY KEY (asID)
 -- Kanta-asiakas-taulu 
 CREATE TABLE kanta_asiakas (
     asID INTEGER AUTO_INCREMENT PRIMARY KEY,
-    nimike CHAR(25),
+    nimike UNIQUE CHAR(25),
     salasana CHAR(20),
     pisteet SMALLINT
 );
