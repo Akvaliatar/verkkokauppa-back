@@ -6,13 +6,13 @@ use kotielainpuisto;
 
 CREATE TABLE tuoteryhma (
 trnro SMALLINT,
-trnimi CHAR(20),
+trnimi CHAR(21),
 teksti CHAR(200),
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
 ) ;
 
 -- values tuoteryhmä
-INSERT INTO tuoteryhma VALUES (1,'Eläinherkut', 'Täältä löytyy tilalla tuotettuja ');
+INSERT INTO tuoteryhma VALUES (1,'Eläinherkut', 'Täältä löytyy tilalla tuotettuja syötäviä tuotteita');
 INSERT INTO tuoteryhma VALUES (2,'Eläintenhoitotuotteet', 'Täältä löydät eläinystävällisiä hoitotuotteita.');
 INSERT INTO tuoteryhma VALUES (3,'Askartelutarvikkeet', 'Täältä löytyy askartelutarvikkeita puuhasteluun.');
 INSERT INTO tuoteryhma VALUES (4,'Asusteet', 'Täältä löydät tilamme villasta tehtyjä vaatteita ja asusteita itselle sekä nelijalkaiselle ystävällesi.');
