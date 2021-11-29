@@ -46,7 +46,7 @@ asSUKUnimi CHAR(20) NOT NULL,
 postinro CHAR(5), 
 postitmp CHAR(20),
 puh INTEGER, 
-sposti CHAR(64), 
+sposti CHAR(64),
 CONSTRAINT asiakas_pk PRIMARY KEY (asID)
 ) ;
 
