@@ -41,14 +41,13 @@ teksti CHAR(75)
 
 -- asiakas
 CREATE TABLE asiakas (
-asID CHAR(6),
+asID INTEGER AUTO_INCREMENT PRIMARY KEY,
 asETUnimi CHAR(20) NOT NULL,
 asSUKUnimi CHAR(20) NOT NULL,
 postinro CHAR(5), 
 postitmp CHAR(20),
 puh INTEGER, 
-sposti CHAR(64),
-CONSTRAINT asiakas_pk PRIMARY KEY (asID)
+sposti CHAR(64)
 ) ;
 
 -- values asiakas
@@ -64,7 +63,7 @@ CREATE TABLE kanta_asiakas (
 -- tilaus
 CREATE TABLE tilaus (
 tilausID INTEGER NOT NULL,
-asID CHAR(6) NOT NULL, 
+asID INTEGER, 
 tilauspvm DATETIME NOT NULL, /* tämä muutettava käytettävän sql-tuotteen mukaan*/
 tapa CHAR(1) NOT NULL,
 tila CHAR(1),
