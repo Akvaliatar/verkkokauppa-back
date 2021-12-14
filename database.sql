@@ -5,7 +5,7 @@ CREATE DATABASE kotielainpuisto;
 use kotielainpuisto;
 
 CREATE TABLE tuoteryhma (
-trnro SMALLINT,
+trnro SMALLINT AUTO_INCREMENT,
 trnimi CHAR(21),
 teksti CHAR(200),
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
@@ -22,7 +22,7 @@ INSERT INTO tuoteryhma VALUES (6,'Liput', 'T채채lt채 voit ostaa ennakkoon p채iv�
 
 -- tuote 
 CREATE TABLE tuote (
-tuotenro INTEGER PRIMARY KEY,
+tuotenro INTEGER PRIMARY KEY AUTO_INCREMENT,
 tuotenimi CHAR(35) UNIQUE NOT NULL,
 hinta DECIMAL(5,2),
 kustannus DECIMAL(5,2), 
@@ -30,7 +30,7 @@ trnro SMALLINT  NOT NULL,
 vari CHAR(40),
 maara CHAR(4), -- grammoista kiloiksi esim. 1000g -> 1kg
 koko CHAR (3), -- esim xs, m, xxl
-lankaTyyppiEl채in CHAR(12), -- L,A,S
+lankaTyyppiElain CHAR(12), -- L,A,S
 pituus CHAR(4), -- askartelua varten?
 teksti CHAR(75)
 ) ;
