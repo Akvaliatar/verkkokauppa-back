@@ -7,13 +7,13 @@ use kotielainpuisto;
 CREATE TABLE tuoteryhma (
 trnro INTEGER AUTO_INCREMENT,
 trnimi CHAR(21),
-teksti CHAR(300),
+teksti TEXT NOT NULL,
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
 ) ;
 
 -- values tuoteryhmä
 INSERT INTO tuoteryhma VALUES (1,'Eläinherkut', 'Täältä löytyy tilalla tuotettuja syötäviä tuotteita');
-INSERT INTO tuoteryhma VALUES (2,'Eläinten hoitotuotteet', 'Täältä löydät eläinystävällisiä hoitotuotteita.');
+INSERT INTO tuoteryhma VALUES (2,'Eläintenhoitotuotteet', 'Täältä löydät eläinystävällisiä hoitotuotteita.');
 INSERT INTO tuoteryhma VALUES (3,'Askartelutarvikkeet', 'Täältä löytyy askartelutarvikkeita puuhasteluun.');
 INSERT INTO tuoteryhma VALUES (4,'Asusteet', 'Täältä löydät tilamme villasta tehtyjä vaatteita ja asusteita itselle sekä nelijalkaiselle ystävällesi.');
 INSERT INTO tuoteryhma VALUES (5,'Palvelut', 'Tästä pääset katselemaan, mitä eri palveluita tarjoamme.');
@@ -32,7 +32,7 @@ maara CHAR(4), -- grammoista kiloiksi esim. 1000g -> 1kg
 koko CHAR (3), -- esim xs, m, xxl
 lankaTyyppiElain CHAR(12), -- L,A,S
 pituus CHAR(4), 
-teksti CHAR(75)
+teksti TEXT NOT NULL
 ) ;
 
 
