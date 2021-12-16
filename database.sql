@@ -5,11 +5,7 @@ CREATE DATABASE kotielainpuisto;
 use kotielainpuisto;
 
 CREATE TABLE tuoteryhma (
-<<<<<<< Updated upstream
-trnro SMALLINT AUTO_INCREMENT,
-=======
 trnro INTEGER AUTO_INCREMENT,
->>>>>>> Stashed changes
 trnimi CHAR(21),
 teksti CHAR(200),
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
@@ -26,11 +22,7 @@ INSERT INTO tuoteryhma VALUES (6,'Liput', 'T채채lt채 voit ostaa ennakkoon p채iv�
 
 -- tuote 
 CREATE TABLE tuote (
-<<<<<<< Updated upstream
-tuotenro INTEGER PRIMARY KEY AUTO_INCREMENT,
-=======
 tuotenro INTEGER AUTO_INCREMENT PRIMARY KEY,
->>>>>>> Stashed changes
 tuotenimi CHAR(35) UNIQUE NOT NULL,
 hinta DECIMAL(5,2),
 kustannus DECIMAL(5,2), 
@@ -70,7 +62,7 @@ CREATE TABLE kanta_asiakas (
 
 -- tilaus
 CREATE TABLE tilaus (
-tilausID INTEGER NOT NULL,
+tilausID INTEGER AUTO_INCREMENT NOT NULL,
 asID INTEGER, 
 tilauspvm DATETIME NOT NULL, /* t채m채 muutettava k채ytett채v채n sql-tuotteen mukaan*/
 tapa CHAR(1) NOT NULL,
