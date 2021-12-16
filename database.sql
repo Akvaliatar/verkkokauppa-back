@@ -11,14 +11,6 @@ teksti TEXT NOT NULL,
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
 ) ;
 
--- values tuoteryhmä
-INSERT INTO tuoteryhma VALUES (1,'Eläinherkut', 'Täältä löytyy tilalla tuotettuja syötäviä tuotteita');
-INSERT INTO tuoteryhma VALUES (2,'Eläintenhoitotuotteet', 'Täältä löydät eläinystävällisiä hoitotuotteita.');
-INSERT INTO tuoteryhma VALUES (3,'Askartelutarvikkeet', 'Täältä löytyy askartelutarvikkeita puuhasteluun.');
-INSERT INTO tuoteryhma VALUES (4,'Asusteet', 'Täältä löydät tilamme villasta tehtyjä vaatteita ja asusteita itselle sekä nelijalkaiselle ystävällesi.');
-INSERT INTO tuoteryhma VALUES (5,'Palvelut', 'Tästä pääset katselemaan, mitä eri palveluita tarjoamme.');
-INSERT INTO tuoteryhma VALUES (6,'Liput', 'Täältä voit ostaa ennakkoon päivälipun tai kausikortin.');
-
 
 -- tuote 
 CREATE TABLE tuote (
@@ -35,10 +27,6 @@ pituus CHAR(4),
 teksti TEXT NOT NULL
 ) ;
 
-
--- values tuote
--- INSERT INTO tuote VALUES (tuotenro,'tuotenimi', hinta, kustannus, trnro, väri, määrä, koko, LankaTyyppiEläin, Pituus);
-
 -- asiakas
 CREATE TABLE asiakas (
 asID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -50,55 +38,34 @@ puh INTEGER,
 sposti CHAR(64)
 ) ;
 
--- values asiakas
-
--- Kanta-asiakas-taulu 
-CREATE TABLE kanta_asiakas (
-    asID INTEGER AUTO_INCREMENT PRIMARY KEY,
-    nimike CHAR(25) UNIQUE,
-    salasana CHAR(20),
-    pisteet SMALLINT
-);
-
 -- tilaus
 CREATE TABLE tilaus (
 tilausID INTEGER AUTO_INCREMENT NOT NULL,
 asID INTEGER, 
-tilauspvm DATETIME NOT NULL, /* tämä muutettava käytettävän sql-tuotteen mukaan*/
-tapa CHAR(1) NOT NULL,
-tila CHAR(1),
 CONSTRAINT tilaus_pk PRIMARY KEY (tilausID),
 CONSTRAINT tilaus_asiakas_fk FOREIGN KEY (asID) 
            REFERENCES asiakas (asID)
 ) ;
 
--- values tilaus
-
-
 -- Tilausrivi-taulu
 CREATE TABLE tilausrivi (
 tilausID INTEGER NOT NULL,
-rivinro SMALLINT NOT NULL,
+rivinro SMALLINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 tuotenro INTEGER, 
 kpl INTEGER,
-CONSTRAINT tilausID_pk PRIMARY KEY (tilausID, rivinro),
 CONSTRAINT tilausID_tuote_fk FOREIGN KEY (tuotenro) 
            REFERENCES tuote (tuotenro)
 );
 
--- values tilausrivi
-/* Tästä tiedostosta on helppo lisätä databaseen tuotteita yms */
+-- values tuoteryhmä
+INSERT INTO tuoteryhma VALUES (1,'Eläinherkut', 'Täältä löytyy tilalla tuotettuja syötäviä tuotteita');
+INSERT INTO tuoteryhma VALUES (2,'Eläintenhoitotuotteet', 'Täältä löydät eläinystävällisiä hoitotuotteita.');
+INSERT INTO tuoteryhma VALUES (3,'Askartelutarvikkeet', 'Täältä löytyy askartelutarvikkeita puuhasteluun.');
+INSERT INTO tuoteryhma VALUES (4,'Asusteet', 'Täältä löydät tilamme villasta tehtyjä vaatteita ja asusteita itselle sekä nelijalkaiselle ystävällesi.');
+INSERT INTO tuoteryhma VALUES (5,'Palvelut', 'Tästä pääset katselemaan, mitä eri palveluita tarjoamme.');
+INSERT INTO tuoteryhma VALUES (6,'Liput', 'Täältä voit ostaa ennakkoon päivälipun tai kausikortin.');
 
-/*tuoteryhmien numerot
-1 = Eläinherkut
-2 = Eläintenhoitotuotteet
-3 = Askartelutarvikkeet
-4 = Asusteet
-5 = Palvelut
-6 = Liput
-*/
-
--- INSERT INTO tuote VALUES (tuotenro,'tuotenimi', hinta, kustannus, trnro, väri, määrä, koko, LankaTyyppiEläin, Pituus);
+-- values tuote
 
 INSERT INTO tuote VALUES (1,'lihapullia', 2.50, 1.50, 1, NULL, '250g', NULL, NULL, NULL, "Lihapullat sisältävät kanaa (100g), riisiä, kananmunia ja porkkanaa. Liha ja kananmunat ovat tilaltamme. Pullat sopivat jälkiruoaksi niin pennuille kuin aikuisille koirille sekä kissoille kohtuudella eivätkä korvaa eläimen normaalia ruokatarvetta.");
 INSERT INTO tuote VALUES (2,'maapähkinäkeksit S', 4.90, 2.50, 1, NULL, '100g', 'S', NULL, NULL, "Keksit sisältävät määpähkinää, kurpitsaa, kananmunia ja vehnäjauhoa. Kurpitsa ja kananmunat tilaltamme. Vehnäjauho on suomalaista luomuvehnäjauhoa. Keksit sopivat jälkiruoaksi pennuille ja aikuisille koirille ja kissoille kohtuudella eivätkä korvaa eläimen normaalia ruokatarvetta."); -- small-pussi (koirille)
