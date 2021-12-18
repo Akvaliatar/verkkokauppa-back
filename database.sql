@@ -7,7 +7,7 @@ use kotielainpuisto;
 CREATE TABLE tuoteryhma (
 trnro INTEGER AUTO_INCREMENT,
 trnimi CHAR(21),
-teksti TEXT NOT NULL,
+teksti TEXT,
 CONSTRAINT tuoteryhma_pk PRIMARY KEY (trnro)
 ) ;
 
@@ -24,24 +24,26 @@ maara CHAR(4), -- grammoista kiloiksi esim. 1000g -> 1kg
 koko CHAR (3), -- esim xs, m, xxl
 lankaTyyppiElain CHAR(12), -- L,A,S
 pituus CHAR(4), 
-teksti TEXT NOT NULL
+teksti TEXT
 ) ;
 
 -- asiakas
 CREATE TABLE asiakas (
-asID INTEGER AUTO_INCREMENT PRIMARY KEY,
+asID INTEGER AUTO_INCREMENT,
 asETUnimi CHAR(20) NOT NULL,
 asSUKUnimi CHAR(20) NOT NULL,
 postinro CHAR(5), 
-postitmp CHAR(20),
-puh INTEGER, 
-sposti CHAR(64)
+postitmp varchar(20),
+puh varchar(20), 
+sposti CHAR(64),
+CONSTRAINT asiakas_pk PRIMARY KEY (asID)
 ) ;
 
 -- tilaus
 CREATE TABLE tilaus (
 tilausID INTEGER AUTO_INCREMENT NOT NULL,
 asID INTEGER, 
+tilauspvm timestamp default current_timestamp,
 CONSTRAINT tilaus_pk PRIMARY KEY (tilausID),
 CONSTRAINT tilaus_asiakas_fk FOREIGN KEY (asID) 
            REFERENCES asiakas (asID)
@@ -50,7 +52,6 @@ CONSTRAINT tilaus_asiakas_fk FOREIGN KEY (asID)
 -- Tilausrivi-taulu
 CREATE TABLE tilausrivi (
 tilausID INTEGER NOT NULL,
-rivinro SMALLINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 tuotenro INTEGER, 
 kpl INTEGER,
 CONSTRAINT tilausID_tuote_fk FOREIGN KEY (tuotenro) 
